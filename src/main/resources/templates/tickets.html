@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Book Adventure World tickets for park access, fast pass, family packages and premium experiences.">
+    <title>Tickets | Adventure World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/themepark.css}">
+    <script th:src="@{/js/themepark.js}" defer></script>
+</head>
+<body>
+    <button class="hamburger-toggle" type="button" aria-label="Toggle navigation">☰</button>
+    <aside class="sidebar" aria-label="Main sidebar navigation">
+        <div class="sidebar-brand">
+            <a href="/" class="brand" aria-label="Adventure World home">
+                <span class="brand-mark">AW</span>
+                <span class="brand-name">Adventure<br>World</span>
+            </a>
+            <p class="sidebar-tag">A little more wonder.</p>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="/"><span>🏠</span> Home</a>
+            <a href="/about"><span>ℹ️</span> About Us</a>
+            <a href="/rides"><span>🎢</span> Rides &amp; Experiences</a>
+            <a href="/tickets" class="active"><span>🎟️</span> Tickets</a>
+            <a href="/stay"><span>🏨</span> Stay</a>
+            <a href="/dining"><span>🍽️</span> Dining</a>
+            <a href="/offers"><span>🎁</span> Offers</a>
+            <a href="/my-bookings"><span>📋</span> My Bookings</a>
+            <a href="/plan-your-visit"><span>📍</span> Plan Your Visit</a>
+            <a href="/contact"><span>📞</span> Contact</a>
+            <a href="/account"><span>👤</span> Account</a>
+        </nav>
+        <div class="sidebar-panel">
+            <label class="sidebar-search">
+                <span>Search</span>
+                <input id="global-search" type="search" placeholder="Rides, stay, food..." autocomplete="off">
+            </label>
+            <button class="panel-btn" type="button" data-open-itinerary>My Itinerary <span class="mini-count" data-basket-count>0</span></button>
+            <button class="panel-btn" type="button">Cart <span class="mini-count">₹0</span></button>
+        </div>
+    </aside>
+
+    <div class="page-shell">
+        <main class="main-content">
+            <header class="topbar">
+                <div class="page-title">Plan Your Visit <strong>Ticket Booking</strong></div>
+                <div class="header-actions">
+                    <div class="search-shell"><input type="search" placeholder="Search categories, tickets, offers..." aria-label="Search tickets"></div>
+                    <span class="status-pill">Fast Entry</span>
+                </div>
+            </header>
+
+            <section class="page-header">
+                <p class="eyebrow">Booking</p>
+                <h1>Choose the perfect day for your adventure.</h1>
+                <p>Plan ahead with flexible tickets, upgraded experiences and family packages built for a smooth arrival and a better park day.</p>
+            </section>
+
+            <div class="booking-layout">
+                <div class="ticket-steps">
+                    <div class="ticket-card">
+                        <div class="step-label">Step 1</div>
+                        <h3>Choose date</h3>
+                        <div class="form-grid">
+                            <label><span>Visit Date</span><input type="date" id="ticket-date" value="2026-10-15"></label>
+                            <label><span>Park Entry</span><select><option>Full Day</option><option>After 4 PM</option><option>Weekend Pass</option></select></label>
+                        </div>
+                    </div>
+
+                    <div class="ticket-card">
+                        <div class="step-label">Step 2</div>
+                        <h3>Choose tickets</h3>
+                        <div class="form-grid">
+                            <label><span>Adults</span><input id="adults" type="number" min="1" value="2"></label>
+                            <label><span>Children</span><input id="children" type="number" min="0" value="1"></label>
+                            <label><span>Ticket Type</span>
+                                <select id="ticket-type">
+                                    <option value="999">Adult Ticket – ₹999</option>
+                                    <option value="699">Child Ticket – ₹699</option>
+                                    <option value="2999">Family Ticket – ₹2,999</option>
+                                    <option value="599">Senior Citizen Ticket – ₹599</option>
+                                </select>
+                            </label>
+                            <label><span>Experience Add-ons</span><select><option>Water Park Access</option><option>Fast Pass</option><option>VIP Lounge</option></select></label>
+                        </div>
+                    </div>
+
+                    <div class="ticket-card">
+                        <div class="step-label">Step 3</div>
+                        <h3>Review</h3>
+                        <form id="ticket-form">
+                            <div class="form-grid">
+                                <label><span>Guest Name</span><input type="text" placeholder="Enter full name"></label>
+                                <label><span>Email</span><input type="email" placeholder="name@example.com"></label>
+                                <label><span>Phone</span><input type="tel" placeholder="+91 98765 43210"></label>
+                                <label><span>Payment Mode</span>
+                                    <select>
+                                        <option>Online Payment</option>
+                                        <option>Pay at Park</option>
+                                        <option>UPI</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div style="margin-top: 20px; text-align: right;"><button class="button button-dark" type="submit">Continue to Payment</button></div>
+                        </form>
+                    </div>
+                </div>
+
+                <aside class="summary-card">
+                    <p class="eyebrow">Booking Summary</p>
+                    <div class="summary-line"><span>Adult tickets</span><strong><span id="adult-count">2</span></strong></div>
+                    <div class="summary-line"><span>Child tickets</span><strong><span id="child-count">1</span></strong></div>
+                    <div class="summary-line"><span>Subtotal</span><strong id="subtotal">₹0</strong></div>
+                    <div class="summary-line"><span>Discount</span><strong id="discount">-₹0</strong></div>
+                    <div class="summary-line"><span>Tax</span><strong id="tax">₹0</strong></div>
+                    <div class="summary-total"><span>Total</span><span id="final-total">₹0</span></div>
+                    <button class="button button-coral" style="margin-top: 18px; width: 100%;" type="button">Proceed to Pay</button>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <dialog id="itinerary-dialog" class="itinerary-dialog">
+        <div class="dialog-shell">
+            <div class="dialog-header">
+                <h3>My Itinerary</h3>
+                <button class="dialog-close" data-close-dialog type="button" aria-label="Close itinerary">×</button>
+            </div>
+            <ul id="itinerary-list" class="itinerary-list"></ul>
+            <p id="empty-itinerary" class="empty-state">Your itinerary is empty. Add rides and experiences to build your visit.</p>
+            <div class="dialog-footer">
+                <span class="dialog-total">Total <span id="itinerary-total">₹0</span></span>
+                <button class="mini-btn" id="save-plan" type="button">Save Plan</button>
+            </div>
+            <button class="button button-dark" id="clear-plan" type="button" style="margin-top: 16px; width: 100%;">Clear Itinerary</button>
+        </div>
+    </dialog>
+    <div id="toast" class="toast" aria-live="polite"></div>
+</body>
+</html>

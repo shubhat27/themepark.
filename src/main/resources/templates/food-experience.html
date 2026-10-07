@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore Adventure World restaurants and menu prices.">
+    <title>Food Menu | Adventure World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/themepark.css}"><link rel="stylesheet" th:href="@{/css/adventure-world.css}">
+    <script th:src="@{/js/adventure-world.js}" defer></script>
+</head>
+<body class="aw-site aw-site--subpage">
+    <div class="aw-layout"><div class="aw-main">
+        <header th:replace="~{fragments/navigation :: topbar('food')}"></header>
+        <main class="aw-inner-page aw-food-page">
+            <section class="destination-hero food-hero" aria-labelledby="food-title"><div class="destination-hero__copy"><p class="eyebrow">Adventure World / Food Menu</p><h1 id="food-title">Good days deserve<br>great food.</h1><p>Local favorites, global comfort food, and a sweet pause between adventures.</p><a class="aw-button aw-button--light" href="#signature-menu">See the menu <span aria-hidden="true">&#8595;</span></a></div><div class="destination-hero__stamp"><strong>6+</strong><span>places to eat<br>around the park</span></div></section>
+            <section class="aw-food-venues" aria-labelledby="food-venues-title"><div class="aw-section-heading"><div><p class="aw-kicker">FIND A TABLE</p><h2 id="food-venues-title">Eat your way around.</h2></div><a class="aw-text-link" href="/dining">Explore restaurants <span aria-hidden="true">&#8599;</span></a></div><div class="aw-food-venue-strip"><a href="/dining"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=82" alt="Grand Grill Indian cuisine" loading="lazy"><span>INDIAN / GRAND GRILL</span></a><a href="/dining"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=700&q=82" alt="Fire and Flour Italian kitchen" loading="lazy"><span>ITALIAN / FIRE &amp; FLOUR</span></a><a href="/dining"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=82" alt="Cloud Nine dessert bar" loading="lazy"><span>DESSERT / CLOUD NINE</span></a></div></section>
+            <section class="destination-menu aw-food-menu" id="signature-menu" aria-labelledby="signature-menu-title"><div class="aw-section-heading"><div><p class="aw-kicker">THE CROWD PLEASERS</p><h2 id="signature-menu-title">A taste of the park.</h2></div><span class="menu-note">Menu prices in INR</span></div><div class="destination-menu-grid">
+                <article class="destination-menu-item"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=700&q=82" alt="Paneer butter masala" loading="lazy"><div><span>VEGETARIAN / INDIAN</span><h3>Paneer butter masala</h3><p>Slow-cooked tomato gravy, fresh cream, warm naan.</p></div><strong>₹280</strong></article>
+                <article class="destination-menu-item"><img src="https://images.unsplash.com/photo-1604908556850-5eea18d9070d?auto=format&fit=crop&w=700&q=82" alt="Tandoor butter naan" loading="lazy"><div><span>BAKERY / SIDE</span><h3>Tandoor butter naan</h3><p>Fluffy, blistered, and brushed with cultured butter.</p></div><strong>₹70</strong></article>
+                <article class="destination-menu-item"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=82" alt="Garden chicken biryani" loading="lazy"><div><span>HOUSE SPECIAL</span><h3>Garden chicken biryani</h3><p>Long-grain rice, warming spices, and fresh herbs.</p></div><strong>₹320</strong></article>
+                <article class="destination-menu-item"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=82" alt="Berry cloud sundae" loading="lazy"><div><span>SWEET TREAT</span><h3>Berry cloud sundae</h3><p>Vanilla bean, seasonal berries, toasted crumble.</p></div><strong>₹190</strong></article>
+                <article class="destination-menu-item"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=700&q=82" alt="Wood-fired margherita pizza" loading="lazy"><div><span>ITALIAN / FIRE &amp; FLOUR</span><h3>Wood-fired margherita</h3><p>Tomato, mozzarella, basil, and crisp stone-baked crust.</p></div><strong>₹420</strong></article>
+                <article class="destination-menu-item"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=82" alt="Ember Yard grilled platter" loading="lazy"><div><span>SMOKEHOUSE / EMBER YARD</span><h3>Ember sharing platter</h3><p>Smoky vegetables, grilled paneer, and house dips.</p></div><strong>₹560</strong></article>
+            </div></section>
+            <p class="aw-food-note">Prices are indicative, in INR, and may vary by venue and availability. Ask the restaurant team about ingredients and dietary needs.</p>
+        </main>
+        <footer class="aw-footer"><a class="aw-brand" href="/"><span class="aw-brand__mark">AW</span><span class="aw-brand__name">ADVENTURE<br>WORLD</span></a><p>Adventure begins together.</p><div><a href="/dining">Restaurants</a><a href="/contact">Contact</a><a href="/tickets">Tickets</a></div></footer>
+    </div></div>
+</body>
+</html>

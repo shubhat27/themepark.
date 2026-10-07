@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dine around the world at Adventure World with Indian, Italian, Asian and family dining experiences.">
+    <title>Dining | Adventure World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/themepark.css}">
+    <script th:src="@{/js/themepark.js}" defer></script>
+</head>
+<body>
+    <button class="hamburger-toggle" type="button" aria-label="Toggle navigation">☰</button>
+    <aside class="sidebar" aria-label="Main sidebar navigation">
+        <div class="sidebar-brand">
+            <a href="/" class="brand" aria-label="Adventure World home">
+                <span class="brand-mark">AW</span>
+                <span class="brand-name">Adventure<br>World</span>
+            </a>
+            <p class="sidebar-tag">A little more wonder.</p>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="/"><span>🏠</span> Home</a>
+            <a href="/about"><span>ℹ️</span> About Us</a>
+            <a href="/rides"><span>🎢</span> Rides &amp; Experiences</a>
+            <a href="/tickets"><span>🎟️</span> Tickets</a>
+            <a href="/stay"><span>🏨</span> Stay</a>
+            <a href="/dining" class="active"><span>🍽️</span> Dining</a>
+            <a href="/offers"><span>🎁</span> Offers</a>
+            <a href="/my-bookings"><span>📋</span> My Bookings</a>
+            <a href="/plan-your-visit"><span>📍</span> Plan Your Visit</a>
+            <a href="/contact"><span>📞</span> Contact</a>
+            <a href="/account"><span>👤</span> Account</a>
+        </nav>
+        <div class="sidebar-panel">
+            <label class="sidebar-search">
+                <span>Search</span>
+                <input id="global-search" type="search" placeholder="Rides, stay, food..." autocomplete="off">
+            </label>
+            <button class="panel-btn" type="button" data-open-itinerary>My Itinerary <span class="mini-count" data-basket-count>0</span></button>
+            <button class="panel-btn" type="button">Cart <span class="mini-count">₹0</span></button>
+        </div>
+    </aside>
+
+    <div class="page-shell">
+        <main class="main-content">
+            <header class="topbar">
+                <div class="page-title">Taste the Adventure <strong>Dine Around the World</strong></div>
+                <div class="header-actions">
+                    <div class="search-shell"><input type="search" placeholder="Search restaurants, cuisines, desserts..." aria-label="Search dining"></div>
+                    <span class="status-pill">Fresh &amp; Local</span>
+                </div>
+            </header>
+
+            <section class="page-header destination-hero dining-hero">
+                <div class="destination-hero__copy">
+                    <p class="eyebrow">Adventure World / Dining</p>
+                    <h1>Take a seat.<br>Stay a while.</h1>
+                    <p>Six welcoming kitchens, local ingredients, and a table for every kind of day.</p>
+                    <a class="button button-light" href="/food">Browse food &amp; prices <span aria-hidden="true">&#8599;</span></a>
+                </div>
+                <div class="destination-hero__stamp"><strong>6</strong><span>distinct dining<br>destinations</span></div>
+            </section>
+
+            <div class="card-grid three-up destination-card-grid">
+                <article class="room-card">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=82" alt="Grand Restaurant">
+                    <div class="ride-body">
+                        <span class="tag">Indian</span>
+                        <h3>Grand Restaurant</h3>
+                        <p>Multi-cuisine dining with laid-back family service and lively atmosphere.</p>
+                        <div class="ride-meta"><span>⭐ 4.8</span><strong>Open 9am–11pm</strong></div>
+                        <button class="button button-dark" type="button">View Menu</button>
+                    </div>
+                </article>
+
+                <article class="room-card">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=82" alt="Global Bistro">
+                    <div class="ride-body">
+                        <span class="tag">Global</span>
+                        <h3>Global Bistro</h3>
+                        <p>Comfort classics and chef-led dishes with a premium modern twist.</p>
+                        <div class="ride-meta"><span>⭐ 4.7</span><strong>Open 10am–10pm</strong></div>
+                        <button class="button button-dark" type="button">View Menu</button>
+                    </div>
+                </article>
+
+                <article class="room-card">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=82" alt="Poolside Dining">
+                    <div class="ride-body">
+                        <span class="tag">Poolside</span>
+                        <h3>Poolside Dining</h3>
+                        <p>Relax, recharge and enjoy light bites and refreshing drinks by the water.</p>
+                        <div class="ride-meta"><span>⭐ 4.9</span><strong>Open 11am–9pm</strong></div>
+                        <button class="button button-dark" type="button">View Menu</button>
+                    </div>
+                </article>
+                    <article class="room-card">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=82" alt="Fire and Flour Italian restaurant">
+                        <div class="ride-body"><span class="tag">Italian Kitchen</span><h3>Fire &amp; Flour</h3><p>Wood-fired pizza, fresh pasta, and a bright courtyard table.</p><div class="ride-meta"><span>4.9 / 5</span><strong>₹449 per guest</strong></div><a class="button button-dark" href="/food#signature-menu">See favorites</a></div>
+                    </article>
+                    <article class="room-card">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=82" alt="Ember Yard grilled sharing plates">
+                        <div class="ride-body"><span class="tag">Smokehouse</span><h3>Ember Yard</h3><p>Open-fire grills, local vegetables, and big tables for sharing.</p><div class="ride-meta"><span>4.8 / 5</span><strong>₹549 per guest</strong></div><a class="button button-dark" href="/food#signature-menu">See favorites</a></div>
+                    </article>
+                    <article class="room-card">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=82" alt="Cloud Nine fruit and cream dessert">
+                        <div class="ride-body"><span class="tag">Dessert Bar</span><h3>Cloud Nine</h3><p>Soft-serve, warm waffles, and an afternoon pick-me-up.</p><div class="ride-meta"><span>4.9 / 5</span><strong>₹199 per guest</strong></div><a class="button button-dark" href="/food#signature-menu">See favorites</a></div>
+                    </article>
+            </div>
+        </main>
+    </div>
+
+    <dialog id="itinerary-dialog" class="itinerary-dialog">
+        <div class="dialog-shell">
+            <div class="dialog-header">
+                <h3>My Itinerary</h3>
+                <button class="dialog-close" data-close-dialog type="button" aria-label="Close itinerary">×</button>
+            </div>
+            <ul id="itinerary-list" class="itinerary-list"></ul>
+            <p id="empty-itinerary" class="empty-state">Your itinerary is empty. Add rides and experiences to build your visit.</p>
+            <div class="dialog-footer">
+                <span class="dialog-total">Total <span id="itinerary-total">₹0</span></span>
+                <button class="mini-btn" id="save-plan" type="button">Save Plan</button>
+            </div>
+            <button class="button button-dark" id="clear-plan" type="button" style="margin-top: 16px; width: 100%;">Clear Itinerary</button>
+        </div>
+    </dialog>
+    <div id="toast" class="toast" aria-live="polite"></div>
+</body>
+</html>

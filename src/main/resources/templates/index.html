@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Adventure World theme park, water park, luxury resort, and holiday experiences in Bangalore, Karnataka.">
+    <meta name="theme-color" content="#133d34">
+    <title>Adventure World | Theme Park & Resort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/themepark.css}">
+    <script th:src="@{/js/themepark.js}" defer></script>
+</head>
+<body>
+    <button class="hamburger-toggle" type="button" aria-label="Toggle navigation">☰</button>
+    <aside class="sidebar" aria-label="Main sidebar navigation">
+        <div class="sidebar-brand">
+            <a href="#home" class="brand" aria-label="Adventure World home">
+                <span class="brand-mark">AW</span>
+                <span class="brand-name">Adventure<br>World</span>
+            </a>
+            <p class="sidebar-tag">A little more wonder.</p>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Sidebar navigation">
+            <a href="/" class="active"><span>🏠</span> Home</a>
+            <a href="/about"><span>ℹ️</span> About Us</a>
+            <a href="/rides"><span>🎢</span> Rides &amp; Experiences</a>
+            <a href="/tickets"><span>🎟️</span> Tickets</a>
+            <a href="/stay"><span>🏨</span> Stay</a>
+            <a href="/dining"><span>🍽️</span> Dining</a>
+            <a href="/offers"><span>🎁</span> Offers</a>
+            <a href="/my-bookings"><span>📋</span> My Bookings</a>
+            <a href="/plan-your-visit"><span>📍</span> Plan Your Visit</a>
+            <a href="/contact"><span>📞</span> Contact</a>
+            <a href="/account"><span>👤</span> Account</a>
+        </nav>
+
+        <div class="sidebar-panel">
+            <label class="sidebar-search">
+                <span>Search</span>
+                <input id="global-search" type="search" placeholder="Rides, stay, food..." autocomplete="off">
+            </label>
+            <button class="panel-btn" type="button" data-open-itinerary>My Itinerary <span class="mini-count" data-basket-count>0</span></button>
+            <button class="panel-btn secondary" type="button">Cart <span class="mini-count">₹0</span></button>
+            <button class="panel-btn auth-panel-btn" type="button" data-auth-button>Login</button>
+        </div>
+    </aside>
+
+    <div class="page-shell">
+        <div class="top-utility-bar">
+            <nav class="top-nav" aria-label="Top navigation">
+                <a href="/" class="active">Home</a>
+                <a href="/about">About</a>
+                <a href="/rides">Rides</a>
+                <a href="/tickets">Tickets</a>
+                <a href="/stay">Stay</a>
+                <a href="/dining">Dining</a>
+                <a href="/offers">Offers</a>
+                <a href="/contact">Contact</a>
+            </nav>
+            <div class="top-actions">
+                <a class="mini-link auth-link" href="/login" data-auth-link>Login</a>
+                <button class="logout-btn" type="button" data-logout>Logout</button>
+            </div>
+        </div>
+        <main class="main-content">
+            <section class="hero" id="home" aria-labelledby="hero-title">
+                <img class="hero-image" src="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=2200&q=88" alt="Adventure park ride glowing at dusk">
+                <div class="hero-shade" aria-hidden="true"></div>
+                <div class="hero-content">
+                    <p class="eyebrow hero-eyebrow"><span></span> Bangalore, Karnataka, India</p>
+                    <h1 id="hero-title">Adventure<br>World</h1>
+                    <p class="hero-copy">A little more wonder. A lot more together.</p>
+                    <div class="hero-actions">
+                        <a class="button button-coral" href="/tickets">Book Tickets <span aria-hidden="true">↘</span></a>
+                        <a class="button button-light" href="/rides">Explore Rides</a>
+                        <a class="button button-light" href="/stay">Stay With Us</a>
+                    </div>
+                </div>
+
+                <div class="booking-panel" aria-label="Availability search panel">
+                    <div class="panel-grid">
+                        <label>
+                            <span>Visit Date</span>
+                            <input type="date" value="2026-10-15">
+                        </label>
+                        <label>
+                            <span>Adults</span>
+                            <input type="number" min="1" value="2">
+                        </label>
+                        <label>
+                            <span>Children</span>
+                            <input type="number" min="0" value="1">
+                        </label>
+                        <label>
+                            <span>Ticket Type</span>
+                            <select>
+                                <option>Adult Ticket</option>
+                                <option>Family Ticket</option>
+                                <option>VIP Ticket</option>
+                                <option>Fast Pass</option>
+                            </select>
+                        </label>
+                    </div>
+                    <button class="button button-dark" type="button">Check Availability</button>
+                </div>
+            </section>
+
+            <section class="intro-band" aria-label="Park introduction">
+                <p class="intro-kicker">Four ways to play</p>
+                <p class="intro-copy">Come for the rush.<br><span>Stay for the stories.</span></p>
+                <a class="text-link" href="/rides">Find your kind of fun <span aria-hidden="true">↗</span></a>
+            </section>
+
+            <section class="content-section" id="rides">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Pick your pace</p>
+                        <h2>Popular Rides</h2>
+                    </div>
+                    <label class="ride-search">
+                        <span>Find an experience</span>
+                        <input id="ride-search" type="search" placeholder="Try water, thrill or family" autocomplete="off">
+                    </label>
+                </div>
+
+                <div class="card-grid ride-grid searchable-items">
+                    <article class="ride-card" data-name="Water Games" data-search="water games splash slides family cool water games" data-price="499">
+                        <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=900&q=82" alt="Water Games">
+                        <div class="ride-body">
+                            <span class="tag">Water Park</span>
+                            <h3>Water Games</h3>
+                            <p>Slides, splash zones, and absolutely no staying dry.</p>
+                            <ul>
+                                <li>Age 8+</li>
+                                <li>Height 120 cm</li>
+                                <li>40 min</li>
+                            </ul>
+                            <div class="ride-meta">
+                                <span>⭐ 4.8</span>
+                                <strong>₹499</strong>
+                            </div>
+                            <div class="card-actions">
+                                <button class="text-btn" type="button">View Details</button>
+                                <button class="mini-btn add-to-day" type="button" data-name="Water Games" data-price="499">Add to Day</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="ride-card" data-name="Roller Coaster" data-search="roller coaster thrill speed drop ride" data-price="699">
+                        <img src="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=900&q=82" alt="Roller Coaster">
+                        <div class="ride-body">
+                            <span class="tag">Thrill Ride</span>
+                            <h3>Roller Coaster</h3>
+                            <p>Big drops, quick turns, and the best kind of scream.</p>
+                            <ul>
+                                <li>Age 12+</li>
+                                <li>Height 130 cm</li>
+                                <li>3 min</li>
+                            </ul>
+                            <div class="ride-meta">
+                                <span>⭐ 4.9</span>
+                                <strong>₹699</strong>
+                            </div>
+                            <div class="card-actions">
+                                <button class="text-btn" type="button">View Details</button>
+                                <button class="mini-btn add-to-day" type="button" data-name="Roller Coaster" data-price="699">Add to Day</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="ride-card" data-name="Giant Wheel" data-search="giant wheel family view ferris wheel" data-price="299">
+                        <img src="https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=900&q=82" alt="Giant Wheel">
+                        <div class="ride-body">
+                            <span class="tag">Family Ride</span>
+                            <h3>Giant Wheel</h3>
+                            <p>Take the slow lane and see the park from a new angle.</p>
+                            <ul>
+                                <li>All ages</li>
+                                <li>No height limit</li>
+                                <li>8 min</li>
+                            </ul>
+                            <div class="ride-meta">
+                                <span>⭐ 4.7</span>
+                                <strong>₹299</strong>
+                            </div>
+                            <div class="card-actions">
+                                <button class="text-btn" type="button">View Details</button>
+                                <button class="mini-btn add-to-day" type="button" data-name="Giant Wheel" data-price="299">Add to Day</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="ride-card" data-name="Adventure Zone" data-search="adventure zone challenge action games" data-price="599">
+                        <img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?auto=format&fit=crop&w=900&q=82" alt="Adventure Zone">
+                        <div class="ride-body">
+                            <span class="tag">Adventure</span>
+                            <h3>Adventure Zone</h3>
+                            <p>Bring your game face and enjoy friendly competition.</p>
+                            <ul>
+                                <li>Age 10+</li>
+                                <li>Height 110 cm</li>
+                                <li>45 min</li>
+                            </ul>
+                            <div class="ride-meta">
+                                <span>⭐ 4.8</span>
+                                <strong>₹599</strong>
+                            </div>
+                            <div class="card-actions">
+                                <button class="text-btn" type="button">View Details</button>
+                                <button class="mini-btn add-to-day" type="button" data-name="Adventure Zone" data-price="599">Add to Day</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <p class="no-results hidden" id="no-results">No rides match your search. Try another word.</p>
+            </section>
+
+            <section class="content-section slim-section" id="stay">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Stay in the Heart of Adventure</p>
+                        <h2>Luxury rooms, villas & unforgettable experiences.</h2>
+                    </div>
+                </div>
+
+                <div class="card-grid stay-grid">
+                    <article class="room-card">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=900&q=82" alt="Deluxe Room">
+                        <div class="ride-body">
+                            <span class="tag">Luxury Room</span>
+                            <h3>Deluxe Room</h3>
+                            <p>Sunlit interiors, comfort-first design, and a restful retreat.</p>
+                            <ul>
+                                <li>2 Guests</li>
+                                <li>King bed</li>
+                                <li>Wi‑Fi + breakfast</li>
+                            </ul>
+                            <div class="ride-meta">
+                                <span>⭐ 4.9</span>
+                                <strong>₹5,999/night</strong>
+                            </div>
+                            <button class="button button-dark" type="button">Book Now</button>
+                        </div>
+                    </article>
+
+                    <article class="room-card">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=82" alt="Family Villa">
+                        <div class="ride-body">
+                            <span class="tag">Luxury Villa</span>
+                            <h3>Family Villa</h3>
+                            <p>Private garden, airy lounge, and a relaxed holiday feel.</p>
+                            <ul>
+                                <li>4 Guests</li>
+                                <li>2 Bedrooms</li>
+                                <li>Private garden</li>
+                            </ul>
+                            <div class="ride-meta">
+                                <span>⭐ 5.0</span>
+                                <strong>₹18,999/night</strong>
+                            </div>
+                            <button class="button button-dark" type="button">Book Now</button>
+                        </div>
+                    </article>
+
+                    <article class="room-card">
+                        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=82" alt="Dubai Luxury Suite">
+                        <div class="ride-body">
+                            <span class="tag">Themed Suite</span>
+                            <h3>Dubai Luxury Suite</h3>
+                            <p>Gold accents, skyline vibes, and a plush resort ambience.</p>
+                            <ul>
+                                <li>2 Guests</li>
+                                <li>Suite lounge</li>
+                                <li>City view</li>
+                            </ul>
+                            <div class="ride-meta">
+                                <span>⭐ 4.9</span>
+                                <strong>₹12,499/night</strong>
+                            </div>
+                            <button class="button button-dark" type="button">Book Now</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="content-section" id="food">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Dine with us</p>
+                        <h2>Flavours from Around the World</h2>
+                    </div>
+                </div>
+
+                <div class="card-grid restaurant-grid">
+                    <article class="food-card">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=82" alt="Grand Restaurant">
+                        <div class="ride-body">
+                            <span class="tag">Fine Dining</span>
+                            <h3>Adventure World Grand Restaurant</h3>
+                            <p>Multi-cuisine dining with a scenic view.</p>
+                            <div class="ride-meta">
+                                <span>⭐ 4.8</span>
+                                <strong>Open 9am–11pm</strong>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=82" alt="Indian Spice Restaurant">
+                        <div class="ride-body">
+                            <span class="tag">Indian</span>
+                            <h3>Indian Spice Restaurant</h3>
+                            <p>Rich curries, regional flavours, and family favorites.</p>
+                            <div class="ride-meta">
+                                <span>⭐ 4.9</span>
+                                <strong>Open 10am–10pm</strong>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=82" alt="Italian Bistro">
+                        <div class="ride-body">
+                            <span class="tag">Italian</span>
+                            <h3>Italian Bistro</h3>
+                            <p>Wood-fired pizzas, handcrafted pasta, and desserts.</p>
+                            <div class="ride-meta">
+                                <span>⭐ 4.7</span>
+                                <strong>Open 11am–11pm</strong>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="food-menu">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=82" alt="Paneer Butter Masala">
+                        <div>
+                            <h4>Paneer Butter Masala</h4>
+                            <p>Rich gravy with soft paneer cubes.</p>
+                        </div>
+                        <div class="menu-price"><span>Veg</span><strong>₹280</strong></div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1604908556850-5eea18d9070d?auto=format&fit=crop&w=800&q=82" alt="Butter Naan">
+                        <div>
+                            <h4>Butter Naan</h4>
+                            <p>Freshly baked, brushed with butter.</p>
+                        </div>
+                        <div class="menu-price"><span>Veg</span><strong>₹70</strong></div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=82" alt="Masala Dosa">
+                        <div>
+                            <h4>Masala Dosa</h4>
+                            <p>Crisp dosa with spiced potato filling.</p>
+                        </div>
+                        <div class="menu-price"><span>Veg</span><strong>₹120</strong></div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=82" alt="Chicken Biryani">
+                        <div>
+                            <h4>Chicken Biryani</h4>
+                            <p>Fragrant rice layered with succulent chicken.</p>
+                        </div>
+                        <div class="menu-price"><span>Non-Veg</span><strong>₹320</strong></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section special-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Offer of the week</p>
+                        <h2>Special Offers</h2>
+                    </div>
+                </div>
+                <div class="offer-grid">
+                    <div class="offer-card coral">
+                        <span>20% OFF</span>
+                        <h3>Family Weekend Offer</h3>
+                        <p>Tickets + lunch + family room package.</p>
+                    </div>
+                    <div class="offer-card green">
+                        <span>Couple Stay</span>
+                        <h3>Room + Tickets + Dinner</h3>
+                        <p>Enjoy a romantic resort escape with park access.</p>
+                    </div>
+                    <div class="offer-card gold">
+                        <span>15% OFF</span>
+                        <h3>Student Offer</h3>
+                        <p>Valid on weekdays with valid student ID.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="tickets">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Book your day</p>
+                        <h2>Ticket Booking</h2>
+                    </div>
+                </div>
+
+                <div class="booking-layout">
+                    <form class="booking-form" id="ticket-form">
+                        <div class="form-grid">
+                            <label><span>Visit Date</span><input type="date" id="ticket-date" value="2026-10-15"></label>
+                            <label><span>Adults</span><input type="number" id="adults" min="1" value="2"></label>
+                            <label><span>Children</span><input type="number" id="children" min="0" value="1"></label>
+                            <label><span>Ticket Type</span>
+                                <select id="ticket-type">
+                                    <option value="999">Adult Ticket – ₹999</option>
+                                    <option value="699">Child Ticket – ₹699</option>
+                                    <option value="2999">Family Ticket – ₹2,999</option>
+                                    <option value="599">Senior Citizen Ticket – ₹599</option>
+                                    <option value="1999">VIP Ticket – ₹1,999</option>
+                                    <option value="1499">Fast Pass – ₹1,499</option>
+                                </select>
+                            </label>
+                            <label><span>Ride Add-ons</span><input type="text" value="Roller Coaster + Water Games" /></label>
+                            <label><span>Payment Type</span>
+                                <select>
+                                    <option>UPI</option>
+                                    <option>Credit Card</option>
+                                    <option>Debit Card</option>
+                                    <option>Net Banking</option>
+                                    <option>Pay at Park</option>
+                                </select>
+                            </label>
+                        </div>
+                        <button class="button button-dark" type="submit">Continue to Payment</button>
+                    </form>
+
+                    <aside class="summary-box">
+                        <h3>Booking Summary</h3>
+                        <div class="summary-row"><span>Subtotal</span><strong id="subtotal">₹2,298</strong></div>
+                        <div class="summary-row"><span>Discount</span><strong id="discount">₹0</strong></div>
+                        <div class="summary-row"><span>Tax</span><strong id="tax">₹0</strong></div>
+                        <div class="summary-row total"><span>Final Amount</span><strong id="final-total">₹2,298</strong></div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="content-section" id="about">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Our story</p>
+                        <h2>Adventure with comfort, joy and wonder.</h2>
+                    </div>
+                </div>
+                <div class="about-grid">
+                    <div>
+                        <p>Adventure World is a premium destination where families, thrill seekers, and travellers can enjoy a world of rides, resort comfort, dining, and unforgettable experiences in the heart of Bangalore.</p>
+                        <p>From splash-filled afternoons to serene villa evenings, every part of the resort is designed to make every day a story worth sharing.</p>
+                    </div>
+                    <div class="stats-grid">
+                        <div><strong>12k+</strong><span>Happy guests</span></div>
+                        <div><strong>35+</strong><span>Rides and zones</span></div>
+                        <div><strong>5-star</strong><span>Resort stays</span></div>
+                        <div><strong>24/7</strong><span>Guest support</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="bookings">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">My Account</p>
+                        <h2>My Bookings</h2>
+                    </div>
+                </div>
+                <div class="booking-list">
+                    <div class="booking-item">
+                        <div>
+                            <span class="booking-id">AW202610001</span>
+                            <h4>Family Ticket</h4>
+                        </div>
+                        <div><b>Booking Date:</b> 10 October 2026</div>
+                        <div><b>Amount:</b> ₹2,999</div>
+                        <div><b>Status:</b> Confirmed</div>
+                        <button class="mini-btn" type="button">Download Ticket</button>
+                    </div>
+                    <div class="booking-item">
+                        <div>
+                            <span class="booking-id">AW202610045</span>
+                            <h4>Deluxe Room</h4>
+                        </div>
+                        <div><b>Booking Date:</b> 14 October 2026</div>
+                        <div><b>Amount:</b> ₹5,999</div>
+                        <div><b>Status:</b> Pending Payment</div>
+                        <button class="mini-btn" type="button">View Details</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="reviews">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Guest experiences</p>
+                        <h2>Customer Reviews</h2>
+                    </div>
+                </div>
+                <div class="review-grid">
+                    <article class="review-card">
+                        <div class="review-head"><strong>Riya K.</strong><span>⭐ 5.0</span></div>
+                        <p>“The family trip was seamless. The rides were exciting, the villa was beautiful, and dinner was excellent.”</p>
+                        <small>10 October 2026</small>
+                    </article>
+                    <article class="review-card">
+                        <div class="review-head"><strong>Aditya S.</strong><span>⭐ 4.9</span></div>
+                        <p>“Adventure World struck the perfect balance between thrill rides and a relaxing luxury stay.”</p>
+                        <small>08 October 2026</small>
+                    </article>
+                    <article class="review-card">
+                        <div class="review-head"><strong>Nisha M.</strong><span>⭐ 5.0</span></div>
+                        <p>“Food options were amazing and the staff were kind. We loved the day pass and the room booking.”</p>
+                        <small>02 October 2026</small>
+                    </article>
+                </div>
+            </section>
+
+            <section class="content-section gallery-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Moments to remember</p>
+                        <h2>Gallery</h2>
+                    </div>
+                </div>
+                <div class="gallery-grid">
+                    <img src="https://images.unsplash.com/photo-1560607162-26d40e9ecb08?auto=format&fit=crop&w=900&q=82" alt="Ride gallery">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=82" alt="Water park gallery">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=900&q=82" alt="Resort gallery">
+                    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=82" alt="Food gallery">
+                </div>
+            </section>
+
+            <section class="content-section contact-section" id="contact">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Get in touch</p>
+                        <h2>Contact Us</h2>
+                    </div>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <p>Adventure World</p>
+                        <p>Bangalore, Karnataka, India</p>
+                        <p>Phone: +91 98765 43210</p>
+                        <p>Email: hello@adventureworld.in</p>
+                        <p>Opening Hours: 9:00 AM – 10:00 PM</p>
+                    </div>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <input type="tel" placeholder="Phone">
+                        <textarea rows="4" placeholder="Message"></textarea>
+                        <button class="button button-dark" type="button">Submit</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="content-section login-section" id="login">
+                <div class="login-grid single-login">
+                    <div class="login-panel account-panel">
+                        <p class="eyebrow">Welcome back</p>
+                        <h3>Login</h3>
+                        <form>
+                            <input type="email" placeholder="Email">
+                            <input type="password" placeholder="Password">
+                            <div class="login-actions">
+                                <button class="button button-dark" type="button" data-auth-button>Login</button>
+                                <button class="button logout-inline" type="button" data-logout>Logout</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <dialog class="itinerary-dialog" id="itinerary-dialog" aria-labelledby="dialog-title">
+        <div class="dialog-head">
+            <div>
+                <p class="eyebrow">Your day, your way</p>
+                <h2 id="dialog-title">My itinerary</h2>
+            </div>
+            <button class="dialog-close" type="button" data-close-dialog aria-label="Close itinerary">×</button>
+        </div>
+        <div class="dialog-content">
+            <p class="empty-itinerary" id="empty-itinerary">Your day is a blank canvas. Add an experience to get started.</p>
+            <ul class="itinerary-list" id="itinerary-list" aria-live="polite"></ul>
+            <div class="itinerary-total"><span>Experience total</span><strong id="itinerary-total">₹0</strong></div>
+            <label class="visit-date-label" for="visit-date">Planning to visit on</label>
+            <input class="visit-date" id="visit-date" type="date" required>
+            <p class="checkout-note">This is a planning preview for your Adventure World day.</p>
+            <div class="dialog-actions">
+                <button class="button button-dark save-plan" id="save-plan" type="button" disabled>Save my plan</button>
+                <button class="clear-plan" id="clear-plan" type="button">Clear itinerary</button>
+            </div>
+        </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <footer class="site-footer">
+        <div class="footer-brand-block">
+            <a class="brand footer-brand" href="#home" aria-label="Adventure World home">
+                <span class="brand-mark">AW</span>
+                <span class="brand-name">Adventure<br>World</span>
+            </a>
+            <p>“A little more wonder. A lot more together.”</p>
+        </div>
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#rides">Rides</a>
+            <a href="#tickets">Ticket Booking</a>
+            <a href="#stay">Stay Booking</a>
+        </div>
+        <div class="footer-links">
+            <h4>Support</h4>
+            <a href="#contact">FAQs</a>
+            <a href="#contact">Privacy Policy</a>
+            <a href="#contact">Terms & Conditions</a>
+            <a href="#contact">Cancellation Policy</a>
+        </div>
+        <div class="footer-links">
+            <h4>Social</h4>
+            <a href="#contact">Instagram</a>
+            <a href="#contact">Facebook</a>
+            <a href="#contact">YouTube</a>
+            <a href="#contact">LinkedIn</a>
+        </div>
+        <div class="copyright">© 2026 Adventure World. All Rights Reserved.</div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Reserve an Adventure World resort stay next to the park.">
+    <meta name="_csrf" th:content="${_csrf.token}"><meta name="_csrf_header" th:content="${_csrf.headerName}">
+    <title>Resort stays | Adventure World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/themepark.css}"><link rel="stylesheet" th:href="@{/css/adventure-world.css}">
+    <script th:src="@{/js/adventure-world.js}" defer></script>
+</head>
+<body class="aw-site aw-site--subpage">
+    <div class="aw-layout">
+        <div class="aw-main"><header th:replace="~{fragments/navigation :: topbar('stay')}"></header>
+            <main class="aw-inner-page aw-stay-page">
+                <section class="aw-stay-hero">
+                    <div><p class="aw-kicker">ADVENTURE WORLD / RESORT</p><h1>Stay for<br><em>the encore.</em></h1><p>Trade the last ride for a slow morning. Stay close to every part of the park.</p></div>
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1500&q=85" alt="Resort pool surrounded by tropical greenery">
+                </section>
+                <section class="aw-stay-rooms" aria-labelledby="stay-rooms-title">
+                    <div class="aw-section-heading"><div><p class="aw-kicker">THREE WAYS TO UNWIND</p><h2 id="stay-rooms-title">Find your room.</h2></div><p class="aw-section-note">Room rates are per night. Reserve now and pay at check-in.</p></div>
+                    <div class="aw-stay-option-grid" id="stay-option-grid" aria-live="polite">
+                        <article class="aw-stay-option" data-room-option="GARDEN_ROOM">
+                            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=82" alt="Calm garden room with a comfortable king bed">
+                            <div class="aw-stay-option__body"><span class="aw-stay-option__tag">GARDEN ROOM</span><h3>Garden Room</h3><p>A quiet terrace, king-bed comfort, and breakfast for two.</p><div class="aw-stay-option__meta"><span>Up to 4 guests</span><strong>₹8,999 / night</strong></div><button type="button" class="aw-text-link" data-choose-room="GARDEN_ROOM">Choose this room <span aria-hidden="true">&#8599;</span></button></div>
+                        </article>
+                        <article class="aw-stay-option" data-room-option="FOREST_VILLA">
+                            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=82" alt="Private villa with a garden and shaded outdoor deck">
+                            <div class="aw-stay-option__body"><span class="aw-stay-option__tag">FOREST VILLA</span><h3>Forest Villa</h3><p>A private garden hideaway with room for the whole family.</p><div class="aw-stay-option__meta"><span>Up to 6 guests</span><strong>₹12,499 / night</strong></div><button type="button" class="aw-text-link" data-choose-room="FOREST_VILLA">Choose this room <span aria-hidden="true">&#8599;</span></button></div>
+                        </article>
+                        <article class="aw-stay-option" data-room-option="LAGOON_SUITE">
+                            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=82" alt="Elegant lagoon suite beside tropical resort water">
+                            <div class="aw-stay-option__body"><span class="aw-stay-option__tag">LAGOON SUITE</span><h3>Lagoon Suite</h3><p>Waterside calm, a private plunge pool, and late checkout.</p><div class="aw-stay-option__meta"><span>Up to 4 guests</span><strong>₹18,999 / night</strong></div><button type="button" class="aw-text-link" data-choose-room="LAGOON_SUITE">Choose this room <span aria-hidden="true">&#8599;</span></button></div>
+                        </article>
+                    </div>
+                    <p class="aw-api-note" id="stay-options-error" hidden>Room options are temporarily unavailable.</p>
+                </section>
+                <section class="aw-stay-planner" aria-labelledby="stay-planner-title">
+                    <div class="aw-section-heading"><div><p class="aw-kicker">RESERVE YOUR STAY</p><h2 id="stay-planner-title">Wake up in the middle of it.</h2></div><p class="aw-section-note">No account needed. Your reference and email manage the reservation.</p></div>
+                    <div class="aw-stay-planner__layout">
+                        <form class="aw-booking-form" id="stay-form">
+                            <div class="aw-form-block"><p class="aw-form-block__title"><span>01</span> Your stay</p>
+                                <div class="aw-form-grid aw-form-grid--visit">
+                                    <label class="aw-field aw-field--wide" for="stay-date"><span>Check-in</span><input id="stay-date" name="checkIn" type="date" required></label>
+                                    <label class="aw-field" for="stay-nights"><span>Nights</span><input id="stay-nights" name="nights" type="number" min="1" max="14" value="2" required></label>
+                                    <label class="aw-field" for="stay-guests"><span>Guests</span><input id="stay-guests" name="guests" type="number" min="1" max="6" value="2" required></label>
+                                    <label class="aw-field aw-field--wide" for="room-type"><span>Room</span><select id="room-type" name="roomType" required><option value="GARDEN_ROOM">Garden room</option></select></label>
+                                </div>
+                            </div>
+                            <div class="aw-form-block"><p class="aw-form-block__title"><span>02</span> Booking contact</p>
+                                <div class="aw-form-grid aw-form-grid--contact">
+                                    <label class="aw-field" for="stay-guest-name"><span>Full name</span><input id="stay-guest-name" name="fullName" type="text" autocomplete="name" maxlength="100" placeholder="Your name" required></label>
+                                    <label class="aw-field" for="stay-guest-email"><span>Email address</span><input id="stay-guest-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required></label>
+                                    <label class="aw-field aw-field--wide" for="stay-guest-phone"><span>Mobile <small>Optional</small></span><input id="stay-guest-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="For arrival updates"></label>
+                                </div>
+                            </div>
+                            <label class="aw-consent" for="stay-terms-accepted">
+                                <input id="stay-terms-accepted" name="termsAccepted" type="checkbox" value="true" required>
+                                <span>I agree to the <a href="/terms-and-conditions" target="_blank" rel="noopener">Terms &amp; Conditions</a> and have read the <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+                            </label>
+                            <p class="aw-form-error" id="stay-error" role="alert" hidden></p>
+                            <button class="aw-button aw-button--primary aw-submit" id="stay-submit" type="submit"><span>Reserve this stay</span><span aria-hidden="true">&#8594;</span></button>
+                            <p class="aw-form-footnote">Reservation is confirmed now; payment is collected at check-in.</p>
+                        </form>
+                        <aside class="aw-price-card" aria-live="polite" aria-label="Live stay price">
+                            <div class="aw-price-card__top"><span class="aw-price-card__eyebrow">YOUR STAY ESTIMATE</span><span class="aw-price-card__seal">INR</span></div>
+                            <h3 id="stay-quote-room">Garden room</h3><p id="stay-quote-rate">Per night</p>
+                            <div class="aw-price-total"><span>Total for <span id="stay-quote-nights">2</span> nights</span><strong id="stay-quote-total">--</strong></div>
+                            <p class="aw-price-card__note">Room total is calculated by Adventure World. No payment is taken online.</p>
+                            <div class="aw-pay-note"><span aria-hidden="true">&#9679;</span> Pay at check-in</div>
+                        </aside>
+                    </div>
+                    <section class="aw-booking-result" id="stay-result" hidden aria-live="polite">
+                        <div class="aw-result-mark" aria-hidden="true">&#10003;</div><div><p class="aw-kicker">YOUR STAY IS RESERVED</p><h3>We'll see you at the resort, <span id="stay-result-name"></span>.</h3><p>Save this reference with your booking email to find or cancel your stay.</p><div class="aw-result-reference"><span>STAY REFERENCE</span><strong id="stay-result-reference"></strong></div><a class="aw-text-link" href="/my-bookings">Manage this reservation <span aria-hidden="true">&#8599;</span></a></div>
+                    </section>
+                </section>
+            </main>
+            <footer class="aw-footer"><a class="aw-brand" href="/"><span class="aw-brand__mark">AW</span><span class="aw-brand__name">ADVENTURE<br>WORLD</span></a><p>A little more wonder. A lot more together.</p><div><a href="/contact">Contact</a><a href="/cancellation-policy">Cancellation</a><span>&copy; 2026 Adventure World</span></div></footer>
+        </div>
+    </div>
+</body>
+</html>

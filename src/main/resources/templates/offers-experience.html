@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore Adventure World family, resort, celebration, and weekday packages.">
+    <title>Offers &amp; Packages | Adventure World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/themepark.css}"><link rel="stylesheet" th:href="@{/css/adventure-world.css}">
+    <script th:src="@{/js/adventure-world.js}" defer></script>
+</head>
+<body class="aw-site aw-site--subpage">
+    <div class="aw-layout"><div class="aw-main">
+        <header th:replace="~{fragments/navigation :: topbar('offers')}"></header>
+        <main class="aw-inner-page aw-offers-page">
+            <section class="aw-offers-hero" aria-labelledby="offers-title"><div class="aw-offers-hero__copy"><p class="aw-kicker">ADVENTURE WORLD / OFFERS</p><h1 id="offers-title">More day.<br>More delight.</h1><p>Better-value ways to bring everyone along, stay a little longer, or celebrate something special.</p><a class="aw-button aw-button--light" href="#offers-list">Explore packages <span aria-hidden="true">&#8595;</span></a></div><div class="aw-offers-hero__label"><span>LIMITED SEASON</span><strong>Make a day<br>of it.</strong></div></section>
+            <section class="aw-offers-list" id="offers-list" aria-labelledby="offers-list-title">
+                <div class="aw-section-heading"><div><p class="aw-kicker">A LITTLE MORE TOGETHER</p><h2 id="offers-list-title">Find your kind of escape.</h2></div><a class="aw-text-link" href="/tickets">See all park passes <span aria-hidden="true">&#8599;</span></a></div>
+                <div class="aw-offer-grid">
+                    <article class="aw-offer-card"><div class="aw-offer-card__image"><img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1000&q=85" alt="Family sharing a meal outdoors" loading="lazy"><span>FAMILY FAVORITE</span></div><div class="aw-offer-card__body"><p class="aw-kicker">PARK DAY / UP TO FOUR</p><h3>Family Day Out</h3><p>Park entry for four, lunch credit, and a keepsake photo from your day together.</p><div class="aw-offer-card__price"><strong>₹2,799</strong><span>per family</span></div><a class="aw-button aw-button--dark" href="/tickets">Plan this visit <span aria-hidden="true">&#8599;</span></a></div></article>
+                    <article class="aw-offer-card"><div class="aw-offer-card__image"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=85" alt="Resort pool at golden hour" loading="lazy"><span>STAY + PLAY</span></div><div class="aw-offer-card__body"><p class="aw-kicker">ONE NIGHT / TWO PARK DAYS</p><h3>Resort Escape</h3><p>An overnight resort stay, park admission, and a dining credit to enjoy at your pace.</p><div class="aw-offer-card__price"><strong>₹7,999</strong><span>starting price</span></div><a class="aw-button aw-button--dark" href="/stay">Choose your stay <span aria-hidden="true">&#8599;</span></a></div></article>
+                    <article class="aw-offer-card"><div class="aw-offer-card__image"><img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1000&q=85" alt="Colorful birthday celebration" loading="lazy"><span>MAKE A WISH</span></div><div class="aw-offer-card__body"><p class="aw-kicker">CELEBRATE AT THE PARK</p><h3>Birthday Takeover</h3><p>A decorated party space, celebration cake, and priority entry for your group.</p><div class="aw-offer-card__price"><strong>₹4,499</strong><span>up to six guests</span></div><a class="aw-button aw-button--dark" href="/contact">Plan a celebration <span aria-hidden="true">&#8599;</span></a></div></article>
+                    <article class="aw-offer-card"><div class="aw-offer-card__image"><img src="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=1000&q=85" alt="Theme park ride lit up after sunset" loading="lazy"><span>AFTERNOON ENTRY</span></div><div class="aw-offer-card__body"><p class="aw-kicker">ENTRY AFTER 4 PM</p><h3>Golden Hour Pass</h3><p>Catch the sunset from the rides and linger for the lights after dark.</p><div class="aw-offer-card__price"><strong>₹999</strong><span>per guest</span></div><a class="aw-button aw-button--dark" href="/tickets">Book evening entry <span aria-hidden="true">&#8599;</span></a></div></article>
+                    <article class="aw-offer-card"><div class="aw-offer-card__image"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1000&q=85" alt="Water park lagoon" loading="lazy"><span>WEEKDAY ONLY</span></div><div class="aw-offer-card__body"><p class="aw-kicker">MONDAY TO THURSDAY</p><h3>Midweek Splash</h3><p>Make a quieter weekday count with full water park access and a cool drink.</p><div class="aw-offer-card__price"><strong>₹1,499</strong><span>per guest</span></div><a class="aw-button aw-button--dark" href="/tickets">Find a weekday <span aria-hidden="true">&#8599;</span></a></div></article>
+                    <article class="aw-offer-card"><div class="aw-offer-card__image"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1000&q=85" alt="Tropical resort pool" loading="lazy"><span>LONG WEEKEND</span></div><div class="aw-offer-card__body"><p class="aw-kicker">STAY TWO NIGHTS</p><h3>Long Weekend Reset</h3><p>Two slow resort mornings, a park day, and time to discover every corner.</p><div class="aw-offer-card__price"><strong>₹16,999</strong><span>starting price</span></div><a class="aw-button aw-button--dark" href="/stay">Explore resort rooms <span aria-hidden="true">&#8599;</span></a></div></article>
+                </div>
+                <p class="aw-offers-note">Package rates are shown in INR. Availability and inclusions are confirmed when you plan your visit.</p>
+            </section>
+        </main>
+        <footer class="aw-footer"><a class="aw-brand" href="/"><span class="aw-brand__mark">AW</span><span class="aw-brand__name">ADVENTURE<br>WORLD</span></a><p>Adventure begins together.</p><div><a href="/tickets">Tickets</a><a href="/stay">Resort</a><a href="/contact">Contact</a></div></footer>
+    </div></div>
+</body>
+</html>

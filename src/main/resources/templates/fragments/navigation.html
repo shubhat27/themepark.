@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <aside class="aw-sidebar" th:fragment="sidebar(currentPage)" aria-label="Adventure World navigation">
+        <a class="aw-brand" href="/" aria-label="Adventure World home">
+            <span class="aw-brand__mark">AW</span>
+            <span class="aw-brand__name">ADVENTURE<br>WORLD</span>
+        </a>
+        <p class="aw-sidebar__caption">Bengaluru, India</p>
+        <nav class="aw-side-nav" aria-label="Main navigation">
+            <span class="aw-side-nav__label">DISCOVER</span>
+            <a href="/" th:classappend="${currentPage == 'home'} ? ' is-active' : ''"><span>01</span> The park</a>
+            <a href="/rides" th:classappend="${currentPage == 'rides'} ? ' is-active' : ''"><span>02</span> Rides &amp; zones</a>
+            <a href="/stay" th:classappend="${currentPage == 'stay'} ? ' is-active' : ''"><span>03</span> Resort stays</a>
+            <a href="/dining" th:classappend="${currentPage == 'dining'} ? ' is-active' : ''"><span>04</span> Food &amp; drink</a>
+            <span class="aw-side-nav__label">PLAN YOUR VISIT</span>
+            <a href="/tickets" th:classappend="${currentPage == 'tickets'} ? ' is-active' : ''"><span>05</span> Book tickets</a>
+            <a href="/my-bookings" th:classappend="${currentPage == 'bookings'} ? ' is-active' : ''"><span>06</span> Find a booking</a>
+            <a href="/plan-your-visit"><span>07</span> Visitor guide</a>
+        </nav>
+        <div class="aw-sidebar__bottom">
+            <a href="/login" class="aw-sidebar__operator">Operator sign in <span aria-hidden="true">&#8599;</span></a>
+            <p>Adventure begins together.</p>
+        </div>
+    </aside>
+
+    <header class="aw-topbar" th:fragment="topbar(currentPage)">
+        <button class="aw-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+            <span></span><span></span><span></span>
+        </button>
+        <a class="aw-brand" href="/" aria-label="Adventure World home">
+            <span class="aw-brand__mark">AW</span>
+            <span class="aw-brand__name">ADVENTURE<br>WORLD</span>
+        </a>
+        <nav class="aw-top-nav" aria-label="Quick links">
+            <a href="/" th:classappend="${currentPage == 'home'} ? ' is-active' : ''">Home</a>
+            <a href="/rides" th:classappend="${currentPage == 'rides'} ? ' is-active' : ''">Rides</a>
+            <a href="/stay" th:classappend="${currentPage == 'stay'} ? ' is-active' : ''">Stay</a>
+            <a href="/dining" th:classappend="${currentPage == 'dining'} ? ' is-active' : ''">Dining</a>
+            <a href="/food" th:classappend="${currentPage == 'food'} ? ' is-active' : ''">Food Menu</a>
+            <a href="/tickets" th:classappend="${currentPage == 'tickets'} ? ' is-active' : ''">Tickets</a>
+            <a href="/offers" th:classappend="${currentPage == 'offers'} ? ' is-active' : ''">Offers</a>
+            <a href="/about" th:classappend="${currentPage == 'about'} ? ' is-active' : ''">About</a>
+            <a href="/contact" th:classappend="${currentPage == 'contact'} ? ' is-active' : ''">Contact</a>
+        </nav>
+        <div class="aw-search-wrap">
+            <label class="aw-search" for="global-search">
+                <span class="aw-search-icon" aria-hidden="true"></span>
+                <input id="global-search" type="search" placeholder="Search rides, tickets, offers..." autocomplete="off" aria-label="Search rides, tickets, offers">
+            </label>
+            <div class="aw-search-results" id="site-search-results" role="listbox" aria-label="Search results" hidden></div>
+        </div>
+    </header>
+</body>
+</html>

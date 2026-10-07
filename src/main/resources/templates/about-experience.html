@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The Adventure World story: a theme park, water world, resort, and dining destination in Bengaluru.">
+    <title>Our story | Adventure World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/themepark.css}"><link rel="stylesheet" th:href="@{/css/adventure-world.css}">
+    <script th:src="@{/js/themepark.js}" defer></script><script th:src="@{/js/adventure-world.js}" defer></script>
+</head>
+<body class="aw-site aw-site--subpage">
+    <div class="aw-layout"><div class="aw-main">
+        <header th:replace="~{fragments/navigation :: topbar('about')}"></header>
+        <main class="aw-inner-page aw-destination-page">
+            <section class="aw-destination-hero aw-about-hero">
+                <div><p class="aw-kicker">ADVENTURE WORLD / OUR STORY</p><h1>A world made<br>for <em>being together.</em></h1><p>One Bengaluru destination for shared thrills, sunny water days, generous hospitality, and stories worth retelling.</p><div class="aw-destination-actions"><a class="aw-button aw-button--light" href="/rides">Explore the park <span aria-hidden="true">&#8599;</span></a><button class="aw-button aw-button--outline-light" type="button" data-open-itinerary>Open my itinerary</button></div></div>
+                <div class="aw-destination-hero__caption"><span>EST. FOR THE JOY OF GOING TOGETHER</span><strong>Bengaluru, India</strong></div>
+            </section>
+            <section class="aw-story-intro"><div><p class="aw-kicker">MORE THAN A PARK</p><h2>A full day, your way.</h2></div><div><p>Adventure World brings a theme park, a water world, resort stays, and all-day dining into one welcoming escape. Come for the ride you have been waiting for; stay for the moments that happen in between.</p><p>From first-time riders to longtime thrill seekers, our promise is simple: make it easy to find your kind of fun and feel looked after while you are here.</p></div></section>
+            <section class="aw-about-stats" aria-label="Adventure World at a glance"><div><strong>35+</strong><span>rides and experiences</span></div><div><strong>4</strong><span>worlds to explore</span></div><div><strong>09:00</strong><span>gates open daily</span></div><div><strong>1</strong><span>day full of possibility</span></div></section>
+            <section class="aw-about-worlds"><div class="aw-section-heading"><div><p class="aw-kicker">THE ADVENTURE, ALL IN ONE PLACE</p><h2>Make room for every mood.</h2></div></div><div class="aw-about-world-grid"><a href="/rides"><img src="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=900&q=82" alt="Theme park coaster at dusk"><span>01 / THRILLS</span><strong>Go all in.</strong></a><a href="/rides"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=900&q=82" alt="Water park on a bright day"><span>02 / WATER</span><strong>Cool off.</strong></a><a href="/stay"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=900&q=82" alt="Resort pool surrounded by tropical greenery"><span>03 / RESORT</span><strong>Stay longer.</strong></a></div></section>
+            <section class="aw-about-promise"><div><p class="aw-kicker">OUR PROMISE</p><h2>Thoughtful fun.<br>Room for everyone.</h2></div><div><p>Clear ride guidance, attentive teams, and welcoming spaces are part of every Adventure World day. We want every guest to feel confident planning ahead and comfortable asking for help along the way.</p><a class="aw-text-link" href="/safety">Read our visitor safety guide <span aria-hidden="true">&#8599;</span></a></div></section>
+        </main>
+        <footer class="aw-footer"><a class="aw-brand" href="/"><span class="aw-brand__mark">AW</span><span class="aw-brand__name">ADVENTURE<br>WORLD</span></a><p>A little more wonder. A lot more together.</p><div><a href="/tickets">Plan a visit</a><a href="/contact">Contact</a><a href="/privacy-policy">Privacy</a></div></footer>
+    </div></div>
+    <dialog class="itinerary-dialog" id="itinerary-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><div><p class="eyebrow">Your day, your way</p><h2 id="dialog-title">My itinerary</h2></div><button class="dialog-close" type="button" data-close-dialog aria-label="Close itinerary">×</button></div><div class="dialog-content"><p class="empty-itinerary" id="empty-itinerary">Your day is a blank canvas. Add an experience to get started.</p><ul class="itinerary-list" id="itinerary-list" aria-live="polite"></ul><div class="itinerary-total"><span>Experience total</span><strong id="itinerary-total">₹0</strong></div><label class="visit-date-label" for="visit-date">Planning to visit on</label><input class="visit-date" id="visit-date" type="date" required><p class="checkout-note">This is a planning preview for your Adventure World day.</p><div class="dialog-actions"><button class="button button-dark save-plan" id="save-plan" type="button" disabled>Save my plan</button><button class="clear-plan" id="clear-plan" type="button">Clear itinerary</button></div></div></dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

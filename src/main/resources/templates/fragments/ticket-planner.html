@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <section class="aw-planner" th:fragment="planner" id="ticket-planner" aria-labelledby="planner-title">
+        <div class="aw-section-heading">
+            <div><p class="aw-kicker">YOUR DAY STARTS HERE</p><h2 id="planner-title">Make it a park day.</h2></div>
+            <p class="aw-section-note">Reserve your date now. Pay when you arrive.</p>
+        </div>
+        <div class="aw-planner__layout">
+            <form id="booking-form" class="aw-booking-form">
+                <div class="aw-form-block">
+                    <p class="aw-form-block__title"><span>01</span> Your visit</p>
+                    <div class="aw-form-grid aw-form-grid--visit">
+                        <label class="aw-field aw-field--wide" for="visit-date"><span>Visit date</span><input id="visit-date" name="visitDate" type="date" required></label>
+                        <label class="aw-field" for="pass-type"><span>Park pass</span><select id="pass-type" name="passType" required><option value="DAY_PASS">Park day</option></select></label>
+                        <label class="aw-field" for="fast-passes"><span>Fast passes</span><input id="fast-passes" name="fastPasses" type="number" min="0" max="12" value="0"></label>
+                    </div>
+                </div>
+                <div class="aw-form-block">
+                    <p class="aw-form-block__title"><span>02</span> Your group</p>
+                    <div class="aw-form-grid aw-form-grid--group">
+                        <label class="aw-field" for="adult-count-input"><span>Adults <small>13 years and over</small></span><input id="adult-count-input" name="adults" type="number" min="1" max="12" value="2" required></label>
+                        <label class="aw-field" for="child-count-input"><span>Children <small>3 to 12 years</small></span><input id="child-count-input" name="children" type="number" min="0" max="12" value="0" required></label>
+                    </div>
+                </div>
+                <div class="aw-form-block">
+                    <p class="aw-form-block__title"><span>03</span> Booking contact</p>
+                    <div class="aw-form-grid aw-form-grid--contact">
+                        <label class="aw-field" for="guest-name"><span>Full name</span><input id="guest-name" name="fullName" type="text" autocomplete="name" maxlength="100" placeholder="Name on the booking" required></label>
+                        <label class="aw-field" for="guest-email"><span>Email address</span><input id="guest-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required></label>
+                        <label class="aw-field aw-field--wide" for="guest-phone"><span>Mobile <small>Optional</small></span><input id="guest-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="For important visit updates"></label>
+                    </div>
+                </div>
+                <label class="aw-consent" for="terms-accepted">
+                    <input id="terms-accepted" name="termsAccepted" type="checkbox" value="true" required>
+                    <span>I agree to the <a href="/terms-and-conditions" target="_blank" rel="noopener">Terms &amp; Conditions</a> and have read the <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+                </label>
+                <p class="aw-form-error" id="booking-error" role="alert" hidden></p>
+                <button class="aw-button aw-button--primary aw-submit" id="booking-submit" type="submit"><span>Reserve park day</span><span aria-hidden="true">&#8594;</span></button>
+                <p class="aw-form-footnote">No account required. Your booking reference and email are your key.</p>
+            </form>
+            <aside class="aw-price-card" aria-live="polite" aria-label="Live booking price">
+                <div class="aw-price-card__top"><span class="aw-price-card__eyebrow">YOUR ESTIMATE</span><span class="aw-price-card__seal">INR</span></div>
+                <h3 id="quote-pass-name">Park day</h3>
+                <p id="quote-pass-description">All-day access to Adventure World</p>
+                <div class="aw-price-line"><span>Tickets &amp; add-ons</span><strong id="quote-subtotal">--</strong></div>
+                <div class="aw-price-line aw-price-line--offer"><span id="quote-offer-label">Group offer</span><strong id="quote-discount">--</strong></div>
+                <div class="aw-price-total"><span>Estimated total</span><strong id="quote-total">--</strong></div>
+                <p class="aw-price-card__note">Final price is calculated by Adventure World. Groups of 4 or more save 10%.</p>
+                <div class="aw-pay-note"><span aria-hidden="true">&#9679;</span> Reserve now, pay at the park</div>
+            </aside>
+        </div>
+        <section class="aw-booking-result" id="booking-result" hidden aria-live="polite">
+            <div class="aw-result-mark" aria-hidden="true">&#10003;</div>
+            <div>
+                <p class="aw-kicker">YOUR PARK DAY IS RESERVED</p>
+                <h3>You're on the list, <span id="result-name"></span>.</h3>
+                <p>Save this reference and the email you used. You will need both to manage the reservation.</p>
+                <div class="aw-result-reference"><span>BOOKING REFERENCE</span><strong id="result-reference"></strong><button type="button" id="copy-reference">Copy</button></div>
+                <a class="aw-text-link" href="/my-bookings">Manage this booking <span aria-hidden="true">&#8599;</span></a>
+            </div>
+            <button class="aw-result-close" type="button" id="close-booking-result" aria-label="Close booking confirmation">&#215;</button>
+        </section>
+    </section>
+</body>
+</html>

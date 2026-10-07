@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore Adventure World rides and experiences, from thrill rides and water adventures to family fun and kids activities.">
+    <title>Rides & Experiences | Adventure World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/themepark.css}">
+    <script th:src="@{/js/themepark.js}" defer></script>
+</head>
+<body>
+    <button class="hamburger-toggle" type="button" aria-label="Toggle navigation">☰</button>
+    <aside class="sidebar" aria-label="Main sidebar navigation">
+        <div class="sidebar-brand">
+            <a href="/" class="brand" aria-label="Adventure World home">
+                <span class="brand-mark">AW</span>
+                <span class="brand-name">Adventure<br>World</span>
+            </a>
+            <p class="sidebar-tag">A little more wonder.</p>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="/"><span>🏠</span> Home</a>
+            <a href="/about"><span>ℹ️</span> About Us</a>
+            <a href="/rides" class="active"><span>🎢</span> Rides &amp; Experiences</a>
+            <a href="/tickets"><span>🎟️</span> Tickets</a>
+            <a href="/stay"><span>🏨</span> Stay</a>
+                    <link rel="stylesheet" th:href="@{/css/adventure-world.css}">
+            <a href="/dining"><span>🍽️</span> Dining</a>
+                    <script th:src="@{/js/adventure-world.js}" defer></script>
+            <a href="/offers"><span>🎁</span> Offers</a>
+            <a href="/my-bookings"><span>📋</span> My Bookings</a>
+            <a href="/plan-your-visit"><span>📍</span> Plan Your Visit</a>
+            <a href="/contact"><span>📞</span> Contact</a>
+            <a href="/account"><span>👤</span> Account</a>
+        </nav>
+        <div class="sidebar-panel">
+            <label class="sidebar-search">
+                <span>Search</span>
+                <input id="global-search" type="search" placeholder="Rides, stay, food..." autocomplete="off">
+            </label>
+            <button class="panel-btn" type="button" data-open-itinerary>My Itinerary <span class="mini-count" data-basket-count>0</span></button>
+            <button class="panel-btn" type="button">Cart <span class="mini-count">₹0</span></button>
+        </div>
+    </aside>
+
+    <div class="page-shell">
+        <main class="main-content">
+            <header class="topbar">
+                <div class="page-title">Explore <strong>Rides &amp; Experiences</strong></div>
+                <div class="header-actions">
+                    <div class="search-shell"><input type="search" id="ride-search" placeholder="Search rides, water park, family fun..." aria-label="Search rides"></div>
+                    <span class="status-pill">Open Daily</span>
+                </div>
+            </header>
+
+            <section class="page-header destination-hero rides-hero">
+                <div class="destination-hero__copy">
+                    <p class="eyebrow">Adventure World / Experiences</p>
+                    <h1>Choose your kind of thrill.</h1>
+                    <p>Eight ways to play, from first rides to full-send drops. Find your next favorite and build it into your park day.</p>
+                    <a class="button button-coral" href="/tickets">Find park passes <span aria-hidden="true">&#8599;</span></a>
+                </div>
+                <div class="destination-hero__stamp"><strong>35+</strong><span>rides across<br>four worlds</span></div>
+            </section>
+
+            <div class="filter-row" aria-label="Ride categories">
+                <button class="active" type="button">All</button>
+                <button type="button">Thrill</button>
+                <button type="button">Water</button>
+                <button type="button">Family</button>
+                <button type="button">Kids</button>
+                <button type="button">Adventure</button>
+            </div>
+                            <section class="page-header destination-hero rides-hero">
+                                <div class="destination-hero__copy">
+                                    <p class="eyebrow">Adventure World / Experiences</p>
+                                    <h1>Big thrills. Cool splashes. Family fun.</h1>
+                                    <p>Find your next favorite across eight rides, water adventures, and family zones. Add it to your park day as you explore.</p>
+                                    <button class="aw-button aw-button--light" type="button" data-open-itinerary>Open my itinerary <span aria-hidden="true">&#8599;</span></button>
+                                </div>
+                                <div class="destination-hero__stamp"><strong>8</strong><span>rides to make<br>your day</span></div>
+                            <li>Age: 8+</li>
+                            <li>Height: 120 cm</li>
+                            <li>Duration: 40 min</li>
+                        </ul>
+                        <div class="ride-meta"><span>⭐ 4.8</span><strong>₹499</strong></div>
+                        <div class="card-actions">
+                            <button class="text-btn" type="button">View Details</button>
+                            <button class="mini-btn add-to-day" type="button" data-name="Water Games" data-price="499">Add to Day</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="ride-card" data-name="Roller Coaster" data-search="roller coaster thrill speed drop ride" data-price="699">
+                    <img src="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=900&q=82" alt="Roller Coaster">
+                    <div class="ride-body">
+                        <span class="tag">Thrill</span>
+                        <h3>Roller Coaster</h3>
+                        <p>High-speed drops and sharp twists for the boldest riders.</p>
+                        <ul>
+                            <li>Age: 12+</li>
+                            <li>Height: 130 cm</li>
+                            <li>Duration: 3 min</li>
+                        </ul>
+                        <div class="ride-meta"><span>⭐ 4.9</span><strong>₹699</strong></div>
+                        <div class="card-actions">
+                            <button class="text-btn" type="button">View Details</button>
+                            <button class="mini-btn add-to-day" type="button" data-name="Roller Coaster" data-price="699">Add to Day</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="ride-card" data-name="Giant Wheel" data-search="giant wheel family view nice views" data-price="299">
+                    <img src="https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=900&q=82" alt="Giant Wheel">
+                    <div class="ride-body">
+                        <span class="tag">Family</span>
+                        <h3>Giant Wheel</h3>
+                        <p>Take in panoramic views and enjoy a relaxing panoramic ride.</p>
+                        <ul>
+                            <li>Age: All</li>
+                            <li>Height: No limit</li>
+                            <li>Duration: 8 min</li>
+                        </ul>
+                        <div class="ride-meta"><span>⭐ 4.7</span><strong>₹299</strong></div>
+                        <div class="card-actions">
+                            <button class="text-btn" type="button">View Details</button>
+                            <button class="mini-btn add-to-day" type="button" data-name="Giant Wheel" data-price="299">Add to Day</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="ride-card" data-name="Adventure Zone" data-search="adventure zone challenge action games" data-price="599">
+                    <img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?auto=format&fit=crop&w=900&q=82" alt="Adventure Zone">
+                    <div class="ride-body">
+                        <span class="tag">Adventure</span>
+                        <h3>Adventure Zone</h3>
+                        <p>Team-based challenge routes, obstacle play and energetic fun.</p>
+                        <ul>
+                            <li>Age: 10+</li>
+                            <li>Height: 110 cm</li>
+                            <li>Duration: 45 min</li>
+                        </ul>
+                        <div class="ride-meta"><span>⭐ 4.8</span><strong>₹599</strong></div>
+                        <div class="card-actions">
+                            <button class="text-btn" type="button">View Details</button>
+                            <button class="mini-btn add-to-day" type="button" data-name="Adventure Zone" data-price="599">Add to Day</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="ride-card" data-name="River Rapids" data-search="river rapids water rafting splash family adventure" data-price="549">
+                    <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=82" alt="Fast water flowing through a river ride">
+                    <div class="ride-body">
+                        <span class="tag">Water Adventure</span><h3>River Rapids</h3>
+                        <p>Ride the current through cool spray, garden bends, and a surprise finish.</p>
+                        <ul><li>Age: 8+</li><li>Height: 110 cm</li><li>Duration: 12 min</li></ul>
+                        <div class="ride-meta"><span>4.8 / 5</span><strong>₹549</strong></div>
+                        <div class="card-actions"><button class="text-btn" type="button">View Details</button><button class="mini-btn add-to-day" type="button" data-name="River Rapids" data-price="549">Add to Day</button></div>
+                    </div>
+                </article>
+
+                <article class="ride-card" data-name="Skyline Flyer" data-search="skyline flyer swing ride thrill sky views" data-price="449">
+                    <img src="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=900&q=82" alt="Aerial view of a brightly lit theme park ride">
+                    <div class="ride-body">
+                        <span class="tag">Thrill</span><h3>Skyline Flyer</h3>
+                        <p>Take off above the treetops for a sweeping view of the whole park.</p>
+                        <ul><li>Age: 10+</li><li>Height: 120 cm</li><li>Duration: 6 min</li></ul>
+                        <div class="ride-meta"><span>4.7 / 5</span><strong>₹449</strong></div>
+                        <div class="card-actions"><button class="text-btn" type="button">View Details</button><button class="mini-btn add-to-day" type="button" data-name="Skyline Flyer" data-price="449">Add to Day</button></div>
+                    </div>
+                </article>
+
+                <article class="ride-card" data-name="Little Explorers" data-search="little explorers kids family carousel junior rides" data-price="249">
+                    <img src="https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=900&q=82" alt="Colorful family rides at an amusement park">
+                    <div class="ride-body">
+                        <span class="tag">Little Adventurers</span><h3>Little Explorers</h3>
+                        <p>Gentle rides, playful discoveries, and big smiles for younger guests.</p>
+                        <ul><li>Age: 3+</li><li>Height: All heights</li><li>Duration: 2-8 min</li></ul>
+                        <div class="ride-meta"><span>4.9 / 5</span><strong>₹249</strong></div>
+                        <div class="card-actions"><button class="text-btn" type="button">View Details</button><button class="mini-btn add-to-day" type="button" data-name="Little Explorers" data-price="249">Add to Day</button></div>
+                    </div>
+                </article>
+
+                <article class="ride-card" data-name="Wave Lagoon" data-search="wave lagoon water park waves swimming games" data-price="599">
+                    <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=900&q=82" alt="Sunlit water park swimming lagoon">
+                    <div class="ride-body">
+                        <span class="tag">Water Park</span><h3>Wave Lagoon</h3>
+                        <p>Find your rhythm in gentle waves, open water, and sunny poolside space.</p>
+                        <ul><li>Age: All ages</li><li>Height: No limit</li><li>Duration: Open session</li></ul>
+                        <div class="ride-meta"><span>4.8 / 5</span><strong>₹599</strong></div>
+                        <div class="card-actions"><button class="text-btn" type="button">View Details</button><button class="mini-btn add-to-day" type="button" data-name="Wave Lagoon" data-price="599">Add to Day</button></div>
+                    </div>
+                </article>
+            </div>
+
+            <p class="no-results hidden" id="no-results">No rides match your search. Try another word.</p>
+        </main>
+    </div>
+
+    <dialog id="itinerary-dialog" class="itinerary-dialog">
+        <div class="dialog-shell">
+            <div class="dialog-header">
+                <h3>My Itinerary</h3>
+                <button class="dialog-close" data-close-dialog type="button" aria-label="Close itinerary">×</button>
+            </div>
+            <ul id="itinerary-list" class="itinerary-list"></ul>
+            <p id="empty-itinerary" class="empty-state">Your itinerary is empty. Add rides and experiences to build your visit.</p>
+            <div class="dialog-footer">
+                <span class="dialog-total">Total <span id="itinerary-total">₹0</span></span>
+                <button class="mini-btn" id="save-plan" type="button">Save Plan</button>
+            </div>
+            <button class="button button-dark" id="clear-plan" type="button" style="margin-top: 16px; width: 100%;">Clear Itinerary</button>
+        </div>
+    </dialog>
+    <div id="toast" class="toast" aria-live="polite"></div>
+</body>
+</html>

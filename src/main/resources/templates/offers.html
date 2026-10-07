@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore Adventure World offers, family packages, resort stays, birthday celebrations and premium weekend deals.">
+    <title>Offers | Adventure World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/themepark.css}">
+    <script th:src="@{/js/themepark.js}" defer></script>
+</head>
+<body>
+    <button class="hamburger-toggle" type="button" aria-label="Toggle navigation">☰</button>
+    <aside class="sidebar" aria-label="Main sidebar navigation">
+        <div class="sidebar-brand">
+            <a href="/" class="brand" aria-label="Adventure World home">
+                <span class="brand-mark">AW</span>
+                <span class="brand-name">Adventure<br>World</span>
+            </a>
+            <p class="sidebar-tag">A little more wonder.</p>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="/"><span>🏠</span> Home</a>
+            <a href="/about"><span>ℹ️</span> About Us</a>
+            <a href="/rides"><span>🎢</span> Rides &amp; Experiences</a>
+            <a href="/tickets"><span>🎟️</span> Tickets</a>
+            <a href="/stay"><span>🏨</span> Stay</a>
+            <a href="/dining"><span>🍽️</span> Dining</a>
+            <a href="/offers" class="active"><span>🎁</span> Offers</a>
+            <a href="/my-bookings"><span>📋</span> My Bookings</a>
+            <a href="/plan-your-visit"><span>📍</span> Plan Your Visit</a>
+            <a href="/contact"><span>📞</span> Contact</a>
+            <a href="/account"><span>👤</span> Account</a>
+        </nav>
+        <div class="sidebar-panel">
+            <label class="sidebar-search">
+                <span>Search</span>
+                <input id="global-search" type="search" placeholder="Rides, stay, food..." autocomplete="off">
+            </label>
+            <button class="panel-btn" type="button" data-open-itinerary>My Itinerary <span class="mini-count" data-basket-count>0</span></button>
+            <button class="panel-btn" type="button">Cart <span class="mini-count">₹0</span></button>
+        </div>
+    </aside>
+
+    <div class="page-shell">
+        <main class="main-content">
+            <header class="topbar">
+                <div class="page-title">Exclusive Deals <strong>Offers &amp; Packages</strong></div>
+                <div class="header-actions">
+                    <div class="search-shell"><input type="search" placeholder="Search offers and packages..." aria-label="Search offers"></div>
+                    <span class="status-pill">Limited Time</span>
+                </div>
+            </header>
+
+            <section class="page-header">
+                <p class="eyebrow">Best Value</p>
+                <h1>Make more of every visit.</h1>
+                <p>Pick from weekend escapes, family day bundles and resort-inclusive offers created to make your Adventure World trip feel effortless and memorable.</p>
+            </section>
+
+            <div class="card-grid three-up">
+                <article class="room-card">
+                    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=82" alt="Family day package">
+                    <div class="ride-body">
+                        <span class="tag">Family</span>
+                        <h3>Family Day Package</h3>
+                        <p>Tickets, lunch and a family photo moment bundled into one simple offer.</p>
+                        <div class="ride-meta"><span>Valid 7 days</span><strong>₹2,799</strong></div>
+                        <button class="button button-dark" type="button">Book Now</button>
+                    </div>
+                </article>
+
+                <article class="room-card">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=82" alt="Stay and park package">
+                    <div class="ride-body">
+                        <span class="tag">Resort</span>
+                        <h3>Stay + Park Package</h3>
+                        <p>One night of luxury with park entry, dining credits and welcome perks.</p>
+                        <div class="ride-meta"><span>Save 22%</span><strong>₹7,999</strong></div>
+                        <button class="button button-dark" type="button">Book Now</button>
+                    </div>
+                </article>
+
+                <article class="room-card">
+                    <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=900&q=82" alt="Birthday celebration package">
+                    <div class="ride-body">
+                        <span class="tag">Celebration</span>
+                        <h3>Birthday Celebration</h3>
+                        <p>Decor, cake, priority access and a concierge-led celebration plan.</p>
+                        <div class="ride-meta"><span>Special pricing</span><strong>₹4,499</strong></div>
+                        <button class="button button-dark" type="button">Book Now</button>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <dialog id="itinerary-dialog" class="itinerary-dialog">
+        <div class="dialog-shell">
+            <div class="dialog-header">
+                <h3>My Itinerary</h3>
+                <button class="dialog-close" data-close-dialog type="button" aria-label="Close itinerary">×</button>
+            </div>
+            <ul id="itinerary-list" class="itinerary-list"></ul>
+            <p id="empty-itinerary" class="empty-state">Your itinerary is empty. Add rides and experiences to build your visit.</p>
+            <div class="dialog-footer">
+                <span class="dialog-total">Total <span id="itinerary-total">₹0</span></span>
+                <button class="mini-btn" id="save-plan" type="button">Save Plan</button>
+            </div>
+            <button class="button button-dark" id="clear-plan" type="button" style="margin-top: 16px; width: 100%;">Clear Itinerary</button>
+        </div>
+    </dialog>
+    <div id="toast" class="toast" aria-live="polite"></div>
+</body>
+</html>

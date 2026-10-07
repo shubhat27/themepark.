@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Contact Adventure World for tickets, stays, dining, support and general park information in Bangalore.">
+    <title>Contact | Adventure World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/themepark.css}">
+    <script th:src="@{/js/themepark.js}" defer></script>
+</head>
+<body>
+    <button class="hamburger-toggle" type="button" aria-label="Toggle navigation">☰</button>
+    <aside class="sidebar" aria-label="Main sidebar navigation">
+        <div class="sidebar-brand">
+            <a href="/" class="brand" aria-label="Adventure World home">
+                <span class="brand-mark">AW</span>
+                <span class="brand-name">Adventure<br>World</span>
+            </a>
+            <p class="sidebar-tag">A little more wonder.</p>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="/"><span>🏠</span> Home</a>
+            <a href="/about"><span>ℹ️</span> About Us</a>
+            <a href="/rides"><span>🎢</span> Rides &amp; Experiences</a>
+            <a href="/tickets"><span>🎟️</span> Tickets</a>
+            <a href="/stay"><span>🏨</span> Stay</a>
+            <a href="/dining"><span>🍽️</span> Dining</a>
+            <a href="/offers"><span>🎁</span> Offers</a>
+            <a href="/my-bookings"><span>📋</span> My Bookings</a>
+            <a href="/plan-your-visit"><span>📍</span> Plan Your Visit</a>
+            <a href="/contact" class="active"><span>📞</span> Contact</a>
+            <a href="/account"><span>👤</span> Account</a>
+        </nav>
+        <div class="sidebar-panel">
+            <label class="sidebar-search">
+                <span>Search</span>
+                <input id="global-search" type="search" placeholder="Rides, stay, food..." autocomplete="off">
+            </label>
+            <button class="panel-btn" type="button" data-open-itinerary>My Itinerary <span class="mini-count" data-basket-count>0</span></button>
+            <button class="panel-btn" type="button">Cart <span class="mini-count">₹0</span></button>
+        </div>
+    </aside>
+
+    <div class="page-shell">
+        <main class="main-content">
+            <header class="topbar">
+                <div class="page-title">Support <strong>Contact Us</strong></div>
+                <div class="header-actions">
+                    <div class="search-shell"><input type="search" placeholder="Search contact information..." aria-label="Search contact"></div>
+                    <span class="status-pill">We’re here to help</span>
+                </div>
+            </header>
+
+            <section class="page-header">
+                <p class="eyebrow">Need Assistance?</p>
+                <h1>Reach Adventure World support.</h1>
+                <p>Call, email or send a message for reservations, park questions, room inquiries and special event bookings.</p>
+            </section>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Adventure World</h3>
+                    <ul class="contact-list">
+                        <li>📍 Bangalore, Karnataka, India</li>
+                        <li>📞 +91 98765 43210</li>
+                        <li>✉️ hello@adventureworld.in</li>
+                        <li>🕒 Mon–Sun: 9:00 AM – 9:00 PM</li>
+                    </ul>
+                </div>
+                <div class="contact-card">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form">
+                        <div class="form-grid">
+                            <label><span>Name</span><input type="text" placeholder="Your name"></label>
+                            <label><span>Email</span><input type="email" placeholder="You@example.com"></label>
+                            <label><span>Phone</span><input type="tel" placeholder="+91 98765 43210"></label>
+                            <label><span>Subject</span><input type="text" placeholder="Booking support"></label>
+                            <label style="grid-column: 1 / -1;"><span>Message</span><textarea placeholder="Tell us how we can help"></textarea></label>
+                        </div>
+                        <div style="margin-top: 18px;"><button class="button button-dark" type="submit">Send Message</button></div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <dialog id="itinerary-dialog" class="itinerary-dialog">
+        <div class="dialog-shell">
+            <div class="dialog-header">
+                <h3>My Itinerary</h3>
+                <button class="dialog-close" data-close-dialog type="button" aria-label="Close itinerary">×</button>
+            </div>
+            <ul id="itinerary-list" class="itinerary-list"></ul>
+            <p id="empty-itinerary" class="empty-state">Your itinerary is empty. Add rides and experiences to build your visit.</p>
+            <div class="dialog-footer">
+                <span class="dialog-total">Total <span id="itinerary-total">₹0</span></span>
+                <button class="mini-btn" id="save-plan" type="button">Save Plan</button>
+            </div>
+            <button class="button button-dark" id="clear-plan" type="button" style="margin-top: 16px; width: 100%;">Clear Itinerary</button>
+        </div>
+    </dialog>
+    <div id="toast" class="toast" aria-live="polite"></div>
+</body>
+</html>

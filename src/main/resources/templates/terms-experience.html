@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Terms for Adventure World tickets, resort reservations, park safety, and visitor conduct.">
+    <title>Terms &amp; Conditions | Adventure World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/themepark.css}"><link rel="stylesheet" th:href="@{/css/adventure-world.css}">
+</head>
+<body class="aw-site aw-site--subpage">
+    <div class="aw-layout"><div class="aw-main">
+        <header th:replace="~{fragments/navigation :: topbar('legal')}"></header>
+        <main class="aw-inner-page aw-legal-page">
+            <section class="aw-page-intro"><p class="aw-kicker">ADVENTURE WORLD / LEGAL</p><h1>Clear plans.<br><em>Great park days.</em></h1><p>These terms apply when you use the Adventure World website, make a ticket reservation, or reserve a resort stay.</p></section>
+            <div class="aw-legal-meta"><span>TERMS &amp; CONDITIONS</span><span>Last updated: 4 October 2026</span></div>
+            <article class="aw-legal-content">
+                <section><h2>1. Reservations and guest details</h2><p>Provide accurate contact and visit information when reserving. A reservation is created when the site displays a booking reference. Keep that reference and the email address used to manage the reservation. Reservations are personal to the named guest and may not be resold without written permission.</p></section>
+                <section><h2>2. Bookings and payment</h2><p>Prices are shown in Indian rupees and are confirmed at the time of reservation. Ticket and stay reservations currently state where payment is due; where pay-at-park or pay-at-check-in applies, payment is collected at the venue. Online payment is available only when a secure payment option is shown at checkout. A booking reference is not proof of payment unless the reservation status confirms payment.</p></section>
+                <section><h2>3. Changes and cancellations</h2><p>Eligible upcoming reservations may be cancelled using the booking reference and original booking email, subject to the cancellation policy shown for the reservation. Same-day and past-date reservations cannot be cancelled through the self-service page. For a paid reservation, refund eligibility and timing depend on the applicable offer and payment provider; contact guest services for help.</p><p><a href="/cancellation-policy">Read the cancellation policy <span aria-hidden="true">&#8599;</span></a></p></section>
+                <section><h2>4. Safety and admission</h2><p>Guests must follow posted park rules, staff instructions, ride age and height restrictions, and water-area safety guidance. Admission or ride access may be refused where required for safety, capacity, maintenance, or behavior that puts other guests or staff at risk. Children must be supervised by a responsible adult.</p></section>
+                <section><h2>5. Park operations</h2><p>Ride availability, operating hours, events, and entertainment may change due to weather, maintenance, safety, or operational needs. We will make reasonable efforts to communicate material changes, but a particular ride or event is not guaranteed to be available on a specific date.</p></section>
+                <section><h2>6. Resort stays</h2><p>Room reservations are subject to the occupancy, check-in, check-out, and cancellation details shown when you book. Guests are responsible for providing accurate arrival information and following resort rules. Extra services, meals, taxes, or incidental charges are included only when stated in the selected offer.</p></section>
+                <section><h2>7. Offers and website use</h2><p>Promotional packages are subject to their stated dates, guest limits, and included services. Offers cannot be combined unless explicitly stated. Website content and images are provided to describe Adventure World; do not misuse the booking service, interfere with site operation, or submit information you are not authorized to share.</p></section>
+                <section><h2>8. Contact and updates</h2><p>For help with a reservation or these terms, contact <a href="mailto:hello@adventureworld.in">hello@adventureworld.in</a> or call +91 98765 43210. We may update these terms as services change; the current version and update date will be posted on this page.</p></section>
+            </article>
+            <div class="aw-legal-next"><a href="/privacy-policy">Read the Privacy Policy <span aria-hidden="true">&#8599;</span></a><a href="/tickets">Plan a park day <span aria-hidden="true">&#8599;</span></a></div>
+        </main>
+        <footer class="aw-footer"><a class="aw-brand" href="/"><span class="aw-brand__mark">AW</span><span class="aw-brand__name">ADVENTURE<br>WORLD</span></a><p>Adventure begins together.</p><div><a href="/privacy-policy">Privacy</a><a href="/contact">Contact</a></div></footer>
+    </div></div>
+</body>
+</html>
